@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="{% static 'css/InteractiveSlideshowApp.css' %}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <!-- <script type="text/javascript" src="jquery-3.3.1.js"></script> -->
-    <script src="{% static 'js/main.js'%}"></script>
+   <script src="{% static 'js/speech.js'%}"></script>
   </head>
   <body>
     <div class="container">
@@ -62,14 +61,17 @@
       </div>
     </div>
     <br>
-
-    <div class="centralbutton" id="speechButton">
-      <button type="button" class="btn btn-info btn-lg" onclick="window.location.href = '{% url 'speech_view' %}';">Enable Speech Browsing!</button>
-      <!-- <button type="button" class="btn btn-info btn-lg" >Enable Speech Browsing!</button> -->
+    <div class="centralbutton">
+      <!-- <button type="button" class="btn btn-info btn-lg" onclick="window.location.href = '{% url 'speech_view' %}';">Enable Speech Browsing!</button>
+      onclick="window.location.href = '{% url 'speech_view' %}';" -->
+      <button type="button" id="speechButton" class="btn btn-info btn-lg">Enable Speech Browsing!</button>
     </div>
-
-    <!-- <div>
-      The speech command: {{ action }}
-    </div> -->
+    <div>
+      The speech command: <p id="action"> {{ action }} </p>
+    </div>
+    <script type="text/javascript">
+      data_from_django = {{ my_data }};
+      widget.init(data_from_django);
+    </script>
   </body>
 </html>

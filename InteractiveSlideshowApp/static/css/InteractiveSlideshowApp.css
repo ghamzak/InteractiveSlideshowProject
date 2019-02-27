@@ -29,6 +29,12 @@ li {
 
 .carousel-inner .item img,
 .carousel-inner .item a img {
-    width: 70%;
-    margin: auto;
+    width: 100%;
+    /* margin: auto; */
+    height: 80%;
   }
+
+#speechButton {
+  display: flex;
+  justify-content: center;
+}
