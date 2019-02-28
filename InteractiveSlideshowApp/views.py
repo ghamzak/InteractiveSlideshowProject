@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .speechfunction import main
+# from .speechfunction import main
 import re, json
 # from django.utils import simplejson
 # Create your views here.
