@@ -20,17 +20,26 @@ $(document).ready(function(){
   $(".right").click(function(){
     $("#myCarousel").carousel("next");
   });
-  //
-  // $("#speechButton").click(function(){
-  //   $.ajax({
-  //     type: "GET",
-  //     url: "speech",
-  //     success: function(result){
-  //       // alert($("#action").text());
-  //       $("#action").html(result);
-  //       alert("hello");
-  //     }
-  //   });
-  // });
+
+  $("#speechButton").click(function(){
+    $.ajax({
+      type: "GET",
+      url: "speech",
+      success: function(result){
+        // alert($("#action").text());
+        //$("#action").html(result);
+        // alert(typeof result);
+        if (result == '"right"'){
+          $("#myCarousel").carousel("next");
+        }
+        else if (result == '"left"'){
+          $("#myCarousel").carousel("prev");
+        }
+        else {
+          alert("Unrecognized Command");
+        }
+      }
+    });
+  });
 
 });

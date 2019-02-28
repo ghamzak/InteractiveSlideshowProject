@@ -1,6 +1,7 @@
 from django.shortcuts import render
-# from .speechfunction import main
+from .speechfunction import main
 import re, json
+from django.http import HttpResponse
 # from django.utils import simplejson
 # Create your views here.
 
@@ -17,14 +18,16 @@ def slideshow_view(request):
     #     action = 'left'
     return render(request, 'InteractiveSlideshowApp/slideshow_view.html', {})
 
-# def speech_view(request):
-#     command = main()
-#
-#     if " ".join(command.split()) in ['right', 'next', 'show next', 'go right']:
-#         action = 'right'
-#     elif " ".join(command.split()) in ['left', 'previous', 'show previous', 'go left', 'back', 'go back']:
-#         action = 'left'
-#     else:
-#         action = 'Unrecognized'
-#
-#     return render(request, 'InteractiveSlideshowApp/speech.html', {'action': action})
+def speech_view(request):
+    command = main()
+
+    if " ".join(command.split()) in ['right', 'next', 'show next', 'go right']:
+        action = 'right'
+    elif " ".join(command.split()) in ['left', 'previous', 'show previous', 'go left', 'back', 'go back']:
+        action = 'left'
+    else:
+        action = 'Unrecognized'
+
+    #return render(request, 'InteractiveSlideshowApp/speech.html', {'action': action})
+    data = json.dumps(action)
+    return HttpResponse(data)
