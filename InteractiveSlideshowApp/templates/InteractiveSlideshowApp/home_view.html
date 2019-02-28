@@ -17,7 +17,7 @@
       <h1><a href="/">Interactive Slideshow Project</a></h1>
     </div>
     <div class="content container">
-      <h4>Authors:</h4>
+      <h3>Authors:</h3>
       <p> <b>Ghazaleh Kazeminejad</b> </p>
       <ul>
         <li>Carousel (click and keyboard controls)</li>
@@ -60,21 +60,31 @@
           </p>
         </div>
         <div class="col-md-8">
-          <h4>Libraries and Resources</h4>
+          <h3>Libraries and Resources</h3>
           <ul>
             <li> <a href="https://getbootstrap.com/">Bootstrap </a> </li>
-            <li> <a href="https://cloud.google.com/speech-to-text/">Google Speech-to-Text</a> </li>
+            <li> <a href="https://cloud.google.com/speech-to-text/">Google Speech-to-Text API</a> </li>
             <li> <a href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_carousel.asp">Bootstrap JS Carousel (W3Schools)</a> </li>
             <li> <a href="https://www.djangoproject.com/">Django</a> </li>
           </ul>
         </div>
+        <div class="col-md-8">
+          <h3>Sketches</h3>
+          <img src="{% static 'images/sketches.png' %}" alt="sketch" width="100%">
+        </div>
+        <div class="col-md-8">
+          <h3>Annotation</h3>
+          <img src="{% static 'images/annotation.png' %}" alt="annotation" width="100%">
+        </div>
       </div>
       <div class="row">
         <div class="col-md-8">
-          
+          <h3>Source Code</h3>
+          <a href="https://github.com/ghamzak/InteractiveSlideshowProject">https://github.com/ghamzak/InteractiveSlideshowProject</a>
         </div>
       </div>
     </div>
+    <br><br>
     <div class="content container">
       <button type="button" class="btn btn-info btn-lg" onclick="window.location.href = '{% url 'slideshow_view' %}';">Go to the Slideshow!</button>
     </div>
